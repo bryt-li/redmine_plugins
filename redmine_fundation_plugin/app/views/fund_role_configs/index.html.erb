@@ -1,0 +1,35 @@
+<%= render :partial => 'common/top_nav_menu' %>
+
+<% if @has_permission %>
+  <div class="box">
+    <h3 style='cursor:pointer;' onclick='$("#fund_role_configs_form").toggle();'>
+    <% if params[:edit] %><%= l('button_edit') %><% else %><%= l('button_create') %><% end%> <%= l('fund_role') %>
+    </h3>
+    <div id='fund_role_configs_form' 
+    	<% if not params[:edit] and not params[:create] %>
+    		style='display:none;'
+    	<% end %>
+    >
+      <%= render :partial => 'fund_role_configs_form' %>
+    </div>
+  </div>
+<% end %>
+
+<table style='font-size:12px;border-collapse:collapse;'>
+
+  <tr>
+    <th><%= l('field_name') %></th>
+    <th><%= l('field_monthly_salary') %></th>
+  </tr>
+  
+  <% @roles.each do |c| %>
+    <tr>
+      <td><%= c.name %></td>
+      <td><%= c.monthly_salary %></td>
+      <% if @has_permission %>
+        <td><%= link_to image_tag('edit.png'), '/fund_role_configs?edit='+c.id.to_s %></td>
+        <td><%= link_to image_tag('delete.png'), '/fund_role_configs?delete='+c.id.to_s, :data=>{:confirm => l('text_fund_role_destroy_confirmation')} %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

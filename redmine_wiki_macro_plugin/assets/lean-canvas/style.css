@@ -1,0 +1,52 @@
+.canvas-table {
+  table-layout: fixed;
+}
+
+td.tall-cell {
+  height: 20em;
+}
+
+td.short-cell {
+  height: 10em;
+}
+
+.canvas-cell-image {
+  float: right;
+  padding-top: 2px;
+}
+
+.add-item-button span {
+  padding-bottom: 3px;
+}
+
+.add-item-button {
+  display: none;
+}
+
+.canvas-cell:hover .add-item-button {
+  display: block;
+}
+
+.canvas-cell-item .normal {
+
+}
+
+.canvas-cell-item .editing {
+}
+
+.cell-title
+{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+.lean-note{
+	text-align: right;
+}
+
+.lean-note span{
+	font-size: 1.5em;
+	font-weight: bolder;
+	margin-right:2em;
+}

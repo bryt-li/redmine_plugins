@@ -1,0 +1,40 @@
+<div class="autoscroll">
+<table class="list odd-even time-entries">
+<thead>
+  <tr>
+    <th><%=l(:label_user)%></th>
+    <th><%=l(:label_issue)%></th>
+    <th><%=l(:label_total)%></th>
+    <th><%=l(:label_constitution)%></th>
+    <th><%=l(:field_comments)%></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% entries.each do |entry|%>
+  <tr id="time-entry-<%= entry.id %>" class="time-entry <%= cycle("odd", "even") %>">
+    <td class=""><%= "#{entry.user.lastname}#{entry.user.firstname}"%></td>
+    <td class=""><%= entry.issue.subject if entry.issue %></td>
+    <td class=""><%= entry.fund_total %></td>
+    <td class="fund_left_align"><%= "#{format("%s: %d, %s: %d, %s: %d",l(:label_money), entry.fund_money || 0, l(:label_resource), entry.fund_resource || 0, l(:label_work), entry.fund_work || 0)}" %></td>
+    <td class=""><%= entry.comments %></td>
+    <td>
+      <% if is_frozen %>
+        <%= link_to l(:button_unfrozen), { controller: "funds", action: "update_frozen", id: entry.id, frozen: false, url: frozen_path() } %>
+      <% else %>
+        <%= link_to l(:button_frozen), { controller: "funds", action: "update_frozen", id: entry.id, frozen: true, url: unfrozen_path() } %>
+        <%= link_to l(:button_edit), edit_fund_path(entry),
+            :title => l(:button_edit),
+            :class => 'icon-only icon-edit' %>
+        <%= link_to l(:button_delete), time_entry_path(entry),
+            :data => {:confirm => l(:text_are_you_sure)},
+            :method => :delete,
+            :title => l(:button_delete),
+            :class => 'icon-only icon-del' %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+</div>

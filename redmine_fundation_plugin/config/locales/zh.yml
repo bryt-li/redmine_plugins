@@ -1,0 +1,66 @@
+# Simplified Chinese strings go here for Rails i18n
+zh:
+  fundation: 合伙人基金
+
+  fund_role: 角色
+  fund_factor: 风险因子
+
+  fund_config: 合伙人基金配置
+
+  field_monthly_salary: 月薪
+  field_fund_work_role: 工作角色
+  field_fund_work_role_monthly_salary: 工作角色月薪
+
+  text_fund_role_destroy_confirmation: 您确信要删除这个合伙人角色吗？
+
+  label_fund: 基金
+  label_money: 现金
+  label_resource: 资源
+  label_work: 工作
+  label_constitution: 构成
+  label_fundation_frozen: 已冻结基金
+  label_fundation_unfrozen: 未冻结基金
+  label_investment: 实际投入
+  label_no_risk: 风险系数=1.00
+  label_current_risk_factor_config: 当前风险因子配置
+
+
+  button_frozen: 冻结
+  button_unfrozen: 解冻
+
+  
+  label_factor: 风险因子
+
+  field_money_factor: 现金投入风险因子
+  field_resource_factor: 资源投入风险因子
+  field_work_factor: 工作投入风险因子
+
+  field_fund_total: 总投入
+  field_fund_money: 现金投入
+  field_fund_resource: 资源投入
+  field_fund_work: 工作投入
+
+
+
+
+
+  label_total_fundation: 合伙人基金总量
+  label_total_money: 现金投入总量
+
+  label_fundation_home: 合伙人基金首页
+  label_timentry_role_new: 新增角色
+
+  column_fund: "基金"
+  column_role: "角色"
+
+  column_role_name: 角色名称
+  column_role_monthly_salary: 平均月薪
+  column_role_hourly_salary: 平均时薪
+
+  project_module_funds: 合伙人基金
+
+  permission_view_funds: "查看合伙人基金"
+
+
+  general_pdf_fontname: stsongstdlight
+  general_pdf_monospaced_fontname: stsongstdlight

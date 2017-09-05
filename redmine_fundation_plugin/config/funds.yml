@@ -1,0 +1,149 @@
+# default cofig will works like forever
+# hour salary = month salary / 176
+
+- range: !ruby/range 2000-01-01..2200-01-01
+  fund: {
+    NA: {
+      month_salary: 0,
+      risk_factor: 1
+    },
+    Programmer: {
+      month_salary: 3500,
+      risk_factor: 1
+    },
+    程序员: {
+      month_salary: 3500,
+      risk_factor: 1
+    },
+    Software Engineer: {
+      month_salary: 5500,
+      risk_factor: 1
+    },
+    软件工程师: {
+      month_salary: 5500,
+      risk_factor: 1
+    },
+    Senior Programmer: {
+      month_salary: 8000,
+      risk_factor: 1
+    },
+    高级程序员: {
+      month_salary: 8000,
+      risk_factor: 1
+    },
+    Architect: {
+      month_salary: 12000,
+      risk_factor: 1
+    },
+    系统架构师: {
+      month_salary: 12000,
+      risk_factor: 1
+    },
+    产品经理: {
+      month_salary: 12000,
+      risk_factor: 1
+    },
+    产品专员: {
+      month_salary: 3000,
+      risk_factor: 1
+    },
+    需求分析师: {
+      month_salary: 10000,
+      risk_factor: 1
+    },
+    用户体验工程师: {
+      month_salary: 8000,
+      risk_factor: 1
+    },
+    测试工程师: {
+      month_salary: 5000,
+      risk_factor: 1
+    },
+    培训讲师: {
+      month_salary: 10000,
+      risk_factor: 1
+    },
+    行政专员: {
+      month_salary: 4000,
+      risk_factor: 1
+    },
+    招聘专员: {
+      month_salary: 4000,
+      risk_factor: 1
+    },
+    市场专员: {
+      month_salary: 3500,
+      risk_factor: 1
+    },
+    公关专员: {
+      month_salary: 3500,
+      risk_factor: 1
+    },
+    调研专员: {
+      month_salary: 3500,
+      risk_factor: 1
+    }
+  }
+
+# time range config 
+# MUST be written in ascendant order
+- range: !ruby/range 2016-07-01..2016-07-31
+  fund: {
+    Programmer: {
+      risk_factor: 2
+    },
+    程序员: {
+      risk_factor: 2
+    },
+    Software Engineer: {
+      risk_factor: 2
+    },
+    软件工程师: {
+      risk_factor: 2
+    },
+    Senior Programmer: {
+      risk_factor: 2
+    },
+    高级程序员: {
+      risk_factor: 2
+    },
+    Architect: {
+      risk_factor: 2
+    },
+    系统架构师: {
+      risk_factor: 2
+    },
+    产品经理: {
+      risk_factor: 2
+    },
+    产品专员: {
+      risk_factor: 2
+    },
+    需求分析师: {
+      risk_factor: 2
+    },
+    用户体验工程师: {
+      risk_factor: 2
+    },
+    测试工程师: {
+      risk_factor: 2
+    },
+    培训讲师: {
+      risk_factor: 2
+    },
+    行政专员: {
+      risk_factor: 2
+    },
+    招聘专员: {
+      risk_factor: 2
+    },
+    市场专员: {
+      risk_factor: 2
+    },
+    公关专员: {
+      risk_factor: 2
+    },
+    调研专员: {
+      risk_factor: 2
+    }
+}

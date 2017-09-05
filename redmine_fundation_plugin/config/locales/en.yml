@@ -1,0 +1,65 @@
+# English strings go here for Rails i18n
+en:
+  fundation: Fundation
+
+  fund_role: Role
+  fund_factor: Risk Factor
+
+  fund_config: Fundation Configuration
+
+  field_monthly_salary: Monthly Salary
+  field_fund_work_role: Work Role
+  field_fund_work_role_monthly_salary: Monthly Salary
+
+  text_fund_role_destroy_confirmation: Are you sure you want to delete this fundation role?
+
+  label_fund: Fund
+  label_money: Money
+  label_resource: Resource
+  label_work: Work
+  label_constitution: Constitution
+  label_fundation_frozen: Frozen Fundation
+  label_fundation_unfrozen: Unfrozen Fundation
+  label_investment: Investment
+  label_no_risk: Risk Fact=1.00
+  label_current_risk_factor_config: Current risk factor configuration
+
+  button_frozen: Frozen
+  button_unfrozen: Unfrozen
+  
+  label_factor: Factor
+
+  field_money_factor: Money factor
+  field_resource_factor: Resource factor
+  field_work_factor: Work factor
+
+
+  field_fund_total: Total Input
+  field_fund_money: Money Input
+  field_fund_resource: Resource Input
+  field_fund_work: Work Input
+
+  
+
+
+  label_total_fundation: Total fundation
+  label_total_money: Total money
+
+  label_fundation_home: Fundation Home
+
+  label_timentry_role_new: Add Role
+
+  column_fund: "Fund"
+  column_role: "Role"
+
+  column_role_name: Name
+  column_role_monthly_salary: Monthly Salary
+  column_role_hourly_salary: Hourly Salary
+
+  project_module_funds: Fundation
+
+  permission_view_funds: "View Funds"
+
+
+  general_pdf_fontname: stsongstdlight
+  general_pdf_monospaced_fontname: stsongstdlight

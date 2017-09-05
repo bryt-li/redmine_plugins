@@ -1,0 +1,13 @@
+
+<div class="pie_list">
+	<% pies.each do |v| %>
+		<div class="pie" data-percent="<%= v[:value].to_f/total.to_f*100 %>" data-scale-color="#ffb400">
+			<div class="label">
+				<p><%= v[:name] %></p>
+				<p><%= "#{format("%.2f", v[:value].to_f/total.to_f*100, 2)}%" %></p>
+				<p><%= "#{format("%.2f", v[:value].to_f)}" %></p>
+			</div>
+		</div>
+	<% end %>
+	<div style="clear:both;">
+</div>

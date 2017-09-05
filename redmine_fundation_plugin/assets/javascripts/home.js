@@ -1,0 +1,1 @@
+webpackJsonp([1],{0:function(t,e,n){"use strict";function u(t){return t&&t.__esModule?t:{"default":t}}n(207),n(204);var o=n(84),r=u(o),a=(0,r["default"])();a.router(n(119)),a.start("#dva-app")},204:function(t,e){},207:function(t,e,n){t.exports=n.p+"home.html"}});

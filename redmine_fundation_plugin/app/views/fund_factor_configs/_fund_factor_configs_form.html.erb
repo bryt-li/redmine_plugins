@@ -1,0 +1,23 @@
+<%= labelled_form_for :factor, @factor,
+                      :url => {:controller => 'fund_factor_configs', :action => 'index' },
+                      :html => {:id => 'fund-factor-configs-form', :multipart => true} do |f| %>
+  
+  <%= error_messages_for 'factor' %>
+
+  <p>
+    <%= f.text_field :money_factor, :size => 5, :required => true %>
+    <br/>
+    <%= f.text_field :resource_factor, :size => 5, :required => true %>
+    <br/>
+    <%= f.text_field :work_factor, :size => 5, :required => true %>
+
+  </p>
+
+  <p>
+    <input type='hidden' name='edit' value='<%= params[:edit] %>'/>
+
+    <%= submit_tag l(:button_submit) %>
+    <input type='button' value='<%= l('button_cancel') %>' onclick='location.href="/fund_factor_configs"' />
+  </p>
+  
+<% end %>

@@ -1,0 +1,17 @@
+{
+  "entry": "src/index.js",
+  "publicPath": "/plugin_assets/redmine_inventory_manager/",
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
+      ]
+    }
+  }
+}

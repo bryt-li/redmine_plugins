@@ -1,0 +1,106 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'index.css', :plugin => 'redmine_fundation_plugin' %>
+<% end %>
+
+<%= javascript_include_tag 'jquery.easypiechart.min', :plugin => 'redmine_fundation_plugin' %>
+
+<%= render :partial => 'nav_tab' %>
+
+<h2><%= l(:label_total_fundation) %>:<%= "#{format("%.2f", @total)}" %></h2>
+<h3><%= l(:label_current_risk_factor_config) %></h3>
+<ul class="risk_factor_config">
+	<li><%=l(:label_money)+l(:fund_factor)%>:<%= "#{format("%.2f", @factor.money_factor)}" %></li>
+	<li><%=l(:label_resource)+l(:fund_factor)%>:<%= "#{format("%.2f", @factor.resource_factor)}" %></li>
+	<li><%=l(:label_work)+l(:fund_factor)%>:<%= "#{format("%.2f", @factor.work_factor)}" %></li>
+</ul>
+
+<div class="autoscroll">
+<table class="list odd-even time-entries">
+<thead>
+  <tr>
+    <th><%=l(:label_user)%></th>
+    <th><%=l(:label_fund)%></th>
+    <th><%=l(:label_money)%></th>
+    <th><%=l(:label_resource)%></th>
+    <th><%=l(:label_work)%></th>
+  </tr>
+</thead>
+<tbody>
+<% @shareholders.each do |k,v| %>
+	<tr id="user-<%= k %>" class="<%= cycle("odd", "even") %>">
+		<td><%= v[:name] %></td>
+		<td><%= "#{format("%.2f", v[:fund])}" %></td>
+		<td><%= "#{format("%.2f", v[:money_fund])}" %></td>
+		<td><%= "#{format("%.2f", v[:resource_fund])}" %></td>
+		<td><%= "#{format("%.2f", v[:work_fund])}" %></td>
+	</tr>
+<% end%>
+</tbody>
+</table>
+
+<% unless @shareholders.empty? %>
+  <%= render 	:partial => 'pies', 
+  				:locals => {
+				  	:total => @total,
+				  	:pies => @shareholders.map do |k,v|
+				  		{
+				  			:name => v[:name],
+				  			:value => v[:fund]
+				  		}
+				  	end
+  				}
+  %>
+<% end %>
+
+<hr/>
+
+<h2><%= l(:label_investment) %>:<%= l(:label_no_risk) %></h2>
+
+<div class="autoscroll">
+<table class="list odd-even time-entries">
+<thead>
+  <tr>
+    <th><%=l(:label_user)%></th>
+    <th><%=l(:label_money)%></th>
+    <th><%=l(:label_resource)%></th>
+    <th><%=l(:label_work)%></th>
+  </tr>
+</thead>
+<tbody>
+<% @shareholders.each do |k,v| %>
+	<tr id="user-<%= k %>" class="<%= cycle("odd", "even") %>">
+		<td><%= v[:name] %></td>
+		<td><%= "#{format("%.2f", v[:money])}" %></td>
+		<td><%= "#{format("%.2f", v[:resource])}" %></td>
+		<td><%= "#{format("%.2f", v[:work])}" %></td>
+	</tr>
+<% end%>
+</tbody>
+</table>
+
+<h3><%= l(:label_total_money) %>:<%= "#{format("%.2f", @total_money)}" %></h3>
+
+<% unless @shareholders.empty? %>
+  <%= render 	:partial => 'pies', 
+  				:locals => {
+				  	:total => @total_money,
+				  	:pies => @shareholders.to_a.map do |k,v|
+				  		{
+				  			:name => v[:name],
+				  			:value => v[:money]
+				  		}
+				  	end
+  				}
+  %>
+<% end %>
+
+<% html_title(l(:label_fundation_home)) %>
+
+<%= javascript_tag do %>
+    $(function() {
+        $('.pie').easyPieChart({
+        });
+    });
+<% end %>
+
+

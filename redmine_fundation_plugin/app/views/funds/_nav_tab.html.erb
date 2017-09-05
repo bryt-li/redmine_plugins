@@ -1,0 +1,17 @@
+<% content_for :header_tags do %>
+	<%= stylesheet_link_tag 'fund_config.css', :plugin => 'redmine_fundation_plugin' %>
+<% end %>
+
+<div id="fund-setting-nav-menu">
+	<ul>
+		<li style='<%= params[:action] == "index" ? 'background-color:#d4e3f7;':'' %>'>
+			<%= link_to l(:label_fundation_home), funds_path %>
+		</li>
+		<li style='<%= params[:action] == "frozen" ? 'background-color:#d4e3f7;':'' %>'>
+			<%= link_to l(:label_fundation_frozen), frozen_path %>
+		</li>
+		<li style='<%= params[:action] == "unfrozen" ? 'background-color:#d4e3f7;':'' %>'>
+			<%= link_to l(:label_fundation_unfrozen), unfrozen_path %>
+		</li>
+	</ul>
+</div>

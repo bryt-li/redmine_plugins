@@ -1,0 +1,28 @@
+#fund-setting-nav-menu{
+	border-bottom:2px solid #6692CC;
+	margin: 10px -10px 0px -10px;
+}
+
+#fund-setting-nav-menu ul{
+	padding:0;
+	margin:0 0 3px 1em;
+}
+
+#fund-setting-nav-menu ul li{
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+	border:2px solid #6692CC;
+	border-bottom:none;
+	padding:5px;
+	margin-right:3px;
+}
+
+
+#fund-role-configs-form input{
+	width: 10em;
+}
+
+.box{
+	margin-top:1em;
+}

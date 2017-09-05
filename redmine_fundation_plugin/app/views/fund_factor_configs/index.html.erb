@@ -1,0 +1,21 @@
+<%= render :partial => 'common/top_nav_menu' %>
+
+<% if @has_permission %>
+  <div class="box">
+    <h3 style='cursor:pointer;' onclick='$("#fund_factor_configs_form").toggle();'>
+    <%= l('button_edit') + l('label_factor') %>
+    </h3>
+    <div id='fund_factor_configs_form' 
+		<% if not params[:edit] %>
+    		style='display:none;'
+    	<% end %>
+    >
+    	<%= render :partial => 'fund_factor_configs_form' %>
+    </div>
+  </div>
+<% end %>
+
+
+<p><%= l('field_money_factor') %>:<%= @factor.money_factor %></p>
+<p><%= l('field_resource_factor') %>:<%= @factor.resource_factor %></p>
+<p><%= l('field_work_factor') %>:<%= @factor.work_factor %></p>

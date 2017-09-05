@@ -1,0 +1,64 @@
+@startuml
+
+class users {
+	
+}
+
+class projects{
+	
+}
+
+class issues{
+
+}
+
+class time_entries {
+	id
+	project_id
+	user_id
+	issue_id
+	hours
+	comments
+	activity_id
+	spent_on
+	tyear
+	tmonth
+	tweek
+	created_on
+	updated_on
+	__ Added __
+	fund_total
+	fund_is_frozen
+	fund_frozen_time
+	.. money contrib ..
+	fund_money
+	fund_money_factor
+	.. resource contrib ..
+	fund_resource
+	fund_resource_factor
+	.. work contrib ..
+	fund_work
+	fund_work_role
+	fund_work_role_monthly_salary
+	fund_work_factor
+}
+
+class fund_factor_configs{
+	money_factor
+	resource_factor
+	work_factor
+}
+
+class fund_role_configs{
+	name
+	monthly_salary
+}
+
+time_entries --> "belong to 1" issues
+time_entries --> "belong to 1" projects
+time_entries --> "created by 1" users
+
+fund_factor_configs --> "copy config" time_entries
+fund_role_configs --> "copy config" time_entries
+
+@enduml

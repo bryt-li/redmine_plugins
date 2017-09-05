@@ -1,0 +1,25 @@
+<%= labelled_form_for :role, @role,
+                      :url => {:controller => 'fund_role_configs', :action => 'index', :id => @role},
+                      :html => {:id => 'fund-role-configs-form', :multipart => true} do |f| %>
+  
+  <%= error_messages_for 'role' %>
+
+  <p>
+    <%= f.text_field :name, :size => 15, :required => true %>
+    <br/>
+    <%= f.text_field :monthly_salary, :size => 5, :required => true %>
+
+    <% if params[:edit] %>
+      <input type='hidden' name='edit' value='<%= params[:edit] %>'/>
+    <% else %>
+      <input type='hidden' name='create' value='true'/>
+    <% end %>
+  </p>
+
+  <p>
+    <%= submit_tag l(:button_submit) %>
+    <% if params[:edit] %>
+      <input type='button' value='<%= l('button_cancel') %>' onclick='location.href="/fund_role_configs"' />
+    <% end %>
+  </p>
+<% end %>
