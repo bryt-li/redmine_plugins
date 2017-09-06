@@ -11,7 +11,7 @@ eos
 
       content = <<-eos
 <style type="text/css">
-#header,#sidebar,#footer,#top-menu,#wiki_add_attachment,.contextual,.other-formats,.breadcrumb{display:none;}
+#header,#sidebar,#footer,#top-menu,#wiki_add_attachment,.contextual,.other-formats,.breadcrumb,.wiki-update-info,.other-formats,#content fieldset{display:none;}
 #content{width:100%;}
 #main{padding:0;margin:0;}
 </style>
