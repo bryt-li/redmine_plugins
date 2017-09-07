@@ -20,8 +20,13 @@ eos
       scrolling = 'yes'
       scrolling = args[3].strip if args[3]
 
+      style = 'border:0;width:'+width+';height:'+height;
+      if scrolling == 'no'
+        style = style + ';overflow:hidden;'
+      end
+
       o = ''
-      o << '<iframe src="' + url + '" style="border: 0" width="' + width +
+      o << '<iframe src="' + url + '" style="'+ style + '" width="' + width +
         '" height="' + height + '" frameborder="0" scrolling="' + scrolling + '"></iframe>'
 
       result = "#{ CGI::unescapeHTML(o) }".html_safe
@@ -58,9 +63,14 @@ eos
       scrolling = 'yes'
       scrolling = args[4].strip if args[4]
 
+      style = 'border:0;width:'+width+';height:'+height;
+      if scrolling == 'no'
+        style = style + ';overflow:hidden;'
+      end
+
       url = "/projects/#{project_id}/wiki/#{wiki}"
       o = ''
-      o << '<iframe src="' + url + '" style="border: 0" width="' + width +
+      o << '<iframe src="' + url + '" style="'+ style + '" width="' + width +
         '" height="' + height + '" frameborder="0" scrolling="' + scrolling + '"></iframe>'
 
       result = "#{ CGI::unescapeHTML(o) }".html_safe
