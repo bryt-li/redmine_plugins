@@ -1,6 +1,11 @@
 require 'redmine'
 
 
+# As Rails 5 disabled the autoloading so i have to load manualy
+Dir["#{File.dirname(__FILE__)}/app/helpers/*.rb"].each { |f| load(f) }
+Dir["#{File.dirname(__FILE__)}/app/controllers/*.rb"].each { |f| load(f) }
+Dir["#{File.dirname(__FILE__)}/lib/**/*.rb"].each { |f| load(f) }
+
 Rails.logger.info 'Starting wiki_graphviz_plugin for Redmine'
 
 Redmine::Plugin.register :wiki_graphviz_plugin do |plugin|

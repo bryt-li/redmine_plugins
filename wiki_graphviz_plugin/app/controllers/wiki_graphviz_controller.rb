@@ -1,7 +1,7 @@
 
 class WikiGraphvizController < ApplicationController
 	unloadable
-  before_filter :find_wiki, :wiki_authorize
+  before_action :find_wiki, :wiki_authorize
 
 	include	WikiGraphvizHelper
 
