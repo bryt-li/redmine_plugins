@@ -12,22 +12,22 @@
     <th rowspan="2"></th>
   </tr>
   <tr>
-    <th class="fund_right_align"><%=l(:label_money)%></th>
-    <th class="fund_right_align"><%=l(:label_work)%></th>
-    <th class="fund_right_align"><%=l(:label_resource)%></th>
+    <th><%=l(:label_money)%></th>
+    <th><%=l(:label_work)%></th>
+    <th><%=l(:label_resource)%></th>
   </tr>
 </thead>
 <tbody>
   <% entries.each do |entry|%>
   <tr id="time-entry-<%= entry.id %>" class="time-entry <%= cycle("odd", "even") %>">
     <td><%= "#{format_date(entry.spent_on)}" %></td>
-    <td class=""><%= "#{entry.user.lastname}#{entry.user.firstname}"%></td>
-    <td class=""><%= entry.issue.subject if entry.issue %></td>
-    <td class=""><%= entry.fund_total %></td>
-    <td class=""><%= (entry.fund_money||0)+(entry.fund_work||0)+(entry.fund_resource||0) %></td>
-    <td class="fund_right_align"><%= "#{format("%.2f * %d", entry.fund_money_factor, entry.fund_money || 0) }" %></td>
-    <td class="fund_right_align"><%= "#{format("%.2f * %d", entry.fund_work_factor, entry.fund_work || 0) }" %></td>
-    <td class="fund_right_align"><%= "#{format("%.2f * %d", entry.fund_resource_factor, entry.fund_resource || 0) }" %></td>
+    <td><%= "#{entry.user.lastname}#{entry.user.firstname}"%></td>
+    <td><%= entry.issue.subject if entry.issue %></td>
+    <td><%= entry.fund_total %></td>
+    <td><%= (entry.fund_money||0)+(entry.fund_work||0)+(entry.fund_resource||0) %></td>
+    <td class="fund_right_align"><%= "#{format("%.2f*%d=%.2f", entry.fund_money_factor, entry.fund_money || 0, entry.fund_money_factor * (entry.fund_money || 0)) }" %></td>
+    <td class="fund_right_align"><%= "#{format("%.2f*%d=%.2f", entry.fund_work_factor, entry.fund_work || 0, entry.fund_work_factor * (entry.fund_work || 0)) }" %></td>
+    <td class="fund_right_align"><%= "#{format("%.2f*%d=%.2f", entry.fund_resource_factor, entry.fund_resource || 0, entry.fund_resource_factor * (entry.fund_resource || 0)) }" %></td>
     <td class=""><%= entry.comments %></td>
     <td>
       <% if is_frozen %>
