@@ -13,6 +13,7 @@ en:
 
   text_fund_role_destroy_confirmation: Are you sure you want to delete this fundation role?
 
+  label_receivables: Receivables
   label_fund: Fund
   label_money: Money
   label_resource: Resource

@@ -7,6 +7,7 @@
     <th rowspan="2"><%=l(:label_issue)%></th>
     <th rowspan="2"><%=l(:label_fund)%></th>
     <th rowspan="2"><%=l(:label_investment)%></th>
+    <th rowspan="2"><%=l(:label_receivables)%></th>
     <th colspan="3"><%=l(:label_constitution)%></th>
     <th rowspan="2"><%=l(:field_comments)%></th>
     <th rowspan="2"></th>
@@ -25,6 +26,7 @@
     <td><%= entry.issue.subject if entry.issue %></td>
     <td><%= entry.fund_total %></td>
     <td><%= (entry.fund_money||0)+(entry.fund_work||0)+(entry.fund_resource||0) %></td>
+    <td><%= entry.fund_total - (entry.fund_money||0) - (entry.fund_work||0) - (entry.fund_resource||0) %></td>
     <td class="fund_right_align"><%= "#{format("%.2f*%d=%.2f", entry.fund_money_factor, entry.fund_money || 0, entry.fund_money_factor * (entry.fund_money || 0)) }" %></td>
     <td class="fund_right_align"><%= "#{format("%.2f*%d=%.2f", entry.fund_work_factor, entry.fund_work || 0, entry.fund_work_factor * (entry.fund_work || 0)) }" %></td>
     <td class="fund_right_align"><%= "#{format("%.2f*%d=%.2f", entry.fund_resource_factor, entry.fund_resource || 0, entry.fund_resource_factor * (entry.fund_resource || 0)) }" %></td>
