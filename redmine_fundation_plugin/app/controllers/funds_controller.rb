@@ -11,7 +11,7 @@ class FundsController < ApplicationController
 		@total_money = 0
 		@shareholders = {}
 		entries.each do |entry|
-			name = entry.user.lastname+entry.user.firstname
+			name = entry.user.firstname
 			if @shareholders.has_key?(entry.user.id)
 				@shareholders[entry.user.id][:fund] += entry.fund_total || 0
 				@shareholders[entry.user.id][:money] += entry.fund_money || 0
