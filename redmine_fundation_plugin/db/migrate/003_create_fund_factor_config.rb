@@ -1,4 +1,4 @@
-class CreateFundFactorConfig < ActiveRecord::Migration[5.1]
+class CreateFundFactorConfig < ActiveRecord::Migration
 
 	class FundFactorConfig < ActiveRecord::Base
 	end

@@ -1,4 +1,4 @@
-class CreateFundRoleConfig < ActiveRecord::Migration[5.1]
+class CreateFundRoleConfig < ActiveRecord::Migration
 
 	class FundRoleConfig < ActiveRecord::Base
 	end

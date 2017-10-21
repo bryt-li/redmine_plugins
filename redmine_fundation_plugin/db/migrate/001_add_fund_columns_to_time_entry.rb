@@ -1,4 +1,4 @@
-class AddFundColumnsToTimeEntry < ActiveRecord::Migration[5.1]
+class AddFundColumnsToTimeEntry < ActiveRecord::Migration
 
 	def change
 		# add column to time_entries table
