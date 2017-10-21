@@ -22,7 +22,7 @@
   <% entries.each do |entry|%>
   <tr id="time-entry-<%= entry.id %>" class="time-entry <%= cycle("odd", "even") %>">
     <td><%= "#{format_date(entry.spent_on)}" %></td>
-    <td><%= "#{entry.user.lastname}#{entry.user.firstname}"%></td>
+    <td><%= "#{entry.user.firstname}"%></td>
     <td><%= entry.issue.subject if entry.issue %></td>
     <td><%= entry.fund_total %></td>
     <td><%= (entry.fund_money||0)+(entry.fund_work||0)+(entry.fund_resource||0) %></td>
