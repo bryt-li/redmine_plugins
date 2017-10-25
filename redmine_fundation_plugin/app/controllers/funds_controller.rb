@@ -49,7 +49,7 @@ class FundsController < ApplicationController
     end
 
     def update
-	    if @time_entry.update(params[:time_entry])
+	    if @time_entry.update(time_entry_params)
 	        respond_to do |format|
 		        format.html {
 		          flash[:notice] = l(:notice_successful_update)
@@ -83,6 +83,10 @@ class FundsController < ApplicationController
     end
 
 	private
+		def time_entry_params
+	    	params.require(:time_entry).permit(:spent_on, :hours, :comments, :fund_work_role, :fund_work_role_monthly_salary, :fund_work, :fund_money, :fund_resource, :fund_work_factor, :fund_money_factor, :fund_resource_factor, :fund_total)
+	    end
+	    
 		def check_partner
 			is_partner = false
 		    User.current.groups.each do |g|
